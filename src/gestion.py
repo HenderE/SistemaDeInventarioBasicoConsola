@@ -30,6 +30,7 @@ while True:
             if len(inventario) == 0:
                 print("\nEl inventario esta vacio.")
             else:
+                print("----------------Inventario ----------------")
                 for producto in inventario:
                     print(f"\nProducto: {producto['Nombre']} | Precio: {producto['Precio']} | Cantidad: {producto['Cantidad']}")
 
