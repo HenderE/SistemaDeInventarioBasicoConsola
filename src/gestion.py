@@ -1,22 +1,26 @@
-inventario = []
-
+inventario = [
+    {"Nombre": "Cilantro", "Precio": 1000, "Cantidad": 5},
+    {"Nombre": "Pera", "Precio": 2500, "Cantidad": 6},
+    {"Nombre": "Manzana", "Precio": 1500, "Cantidad": 4},
+    {"Nombre": "Doritos", "Precio": 8000, "Cantidad": 2},
+    {"Nombre": "Harina Pan", "Precio": 4000, "Cantidad": 1}
+    ]
 while True:
     print("")
-    print("--" * 9)
-    print("       Menú       ")
-    print("--" * 9)
+    print("--" * 8)
+    print("     Menú     ")
+    print("--" * 8)
     print("\n1. Agregar producto")
-    print("\n2. Mostrar inventario")
-    print("\n3. Calcular estadistica")
+    print("\n2. Mostrar producto")
+    print("\n3. Calcular estadisticas")
     print("\n4. Salir")
-
     try:
-        opcion = int(input("\nQue opción deseas realizar: "))
-        
+        opcion = int(input("\nIngrese una opción: "))
+
         if opcion == 1:
-            nombre = input("\nIngresa el nombre del producto: ")
-            precio = float(input("\nIngresa el precio del producto: "))
-            cantidad = int(input("\nIngresa la cantidad del producto: "))
+            nombre = input("\nIngrese nombre del producto: ")
+            precio = float(input("\nIngrese el precio del producto: "))
+            cantidad = int(input("\nIngrese la cantidad del producto: "))
             producto = {
                 "Nombre": nombre,
                 "Precio": precio,
@@ -28,9 +32,11 @@ while True:
 
         elif opcion == 2:
             if len(inventario) == 0:
-                print("\nEl inventario esta vacio.")
+                print("")
+                print("\nInventario Vacio.")
             else:
-                print("----------------Inventario ----------------")
+                print("")
+                print("------------------ Inventario ------------------")
                 for producto in inventario:
                     print(f"\nProducto: {producto['Nombre']} | Precio: {producto['Precio']} | Cantidad: {producto['Cantidad']}")
 
@@ -40,14 +46,13 @@ while True:
             for producto in inventario:
                 total += producto["Precio"] * producto["Cantidad"]
                 cantidad_total += producto["Cantidad"]
-                print(f"\nValor total del inventario: {total}")
-                print(f"\nCantidad total del producto: {cantidad_total}")
+            print(f"\nValor total del inventario: {total}")
+            print(f"\nCantidad total de productos: {cantidad_total}")
 
         elif opcion == 4:
             print("\nSaliendo del sistema...")
             break
-
         else:
-            print("\nOpcion invalida")
+            print("\nOpcion Invalida.")
     except ValueError:
-        print("\nIngresa ingresa datos validos.")
+        print("\nIngresa un dato valido.")
