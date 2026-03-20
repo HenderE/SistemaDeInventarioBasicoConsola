@@ -1,4 +1,16 @@
-#creo funcion para agregar producto y luego llamar la funcion en su respectiva opcion  
+ #creo el menú para mostrar al usuario.
+def menu():
+            print("")
+            print("--" * 8)
+            print("     Menú     ")
+            print("--" * 8)
+            #muestro las opciones disponibles.
+            print("\n1. Agregar producto")
+            print("\n2. Mostrar producto")
+            print("\n3. Calcular estadisticas")
+            print("\n4. Salir")
+
+#creo funcion para agregar producto y luego llamar la funcion en su respectiva opcion 
 def agregar_producto():
             #pido los datos del producto mediante una funcion
             nombre = input("\nIngrese nombre del producto: ")
@@ -49,15 +61,8 @@ inventario = [
 
 #uso un ciclo infinito para que el menú se repita hasta que el usuario decida salirse. 
 while True:
-    print("")
-    print("--" * 8)
-    print("     Menú     ")
-    print("--" * 8)
-    #muestro las opciones disponibles.
-    print("\n1. Agregar producto")
-    print("\n2. Mostrar producto")
-    print("\n3. Calcular estadisticas")
-    print("\n4. Salir")
+    #muestro el menu mediante funcion
+    menu()
     try:
         #le pido al usuario que ingrese una opción
         opcion = int(input("\nIngrese una opción: "))
